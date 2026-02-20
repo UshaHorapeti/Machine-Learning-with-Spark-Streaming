@@ -4,7 +4,7 @@ $adomd_obj = Add-Type -Path $assemblyPath -PassThru
 $Connection_class = $adomd_obj | Where-Object {$_.FullName -eq 'Microsoft.AnalysisServices.AdomdClient.AdomdConnection'}
 $Adapter_class = $adomd_obj | Where-Object {$_.FullName -eq 'Microsoft.AnalysisServices.AdomdClient.AdomdDataAdapter'}
 
-$PowerBILogin = "MailIF"
+$PowerBILogin = "MailID"
 $PowerBIPassword = "Password"
 $PowerBIEndpoint = "powerbi://api.powerbi.com/v1.0/myorg/WorkspaceName"
 $reportName = "Demand Reconciliation"
@@ -82,3 +82,4 @@ $Results | export-csv -Path $ExportPath  -NoTypeInformation
 $Connection.Dispose()
 
 $Connection.Close()
+
